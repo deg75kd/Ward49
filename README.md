@@ -27,7 +27,8 @@ geos 3.9.1\
 sodapy 2.1.0\
 shapely 1.7.1\
 geopy 2.1.0\
-folium 0.12.1
+folium 0.12.1\
+plotly 4.14.3
 
 ## Running the Code
 
