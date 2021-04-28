@@ -15,10 +15,13 @@
 
 ## File Descriptions
 
+* Boundaries - Wards (2015-).geojson - Geographic boundaries of Chicago's wards
+* Ward49-boundaries.ipynb - Initial test for working with geospatial data
 * Ward49_import.ipynb - Import data using the City of Chicago API
 * Ward49_map.ipynb - Create a map of points of interest in Chicago
 * Ward49_plotly.ipynb - Testing maps made with Plotly
 * Ward49_foursquare.ipynb - Testing pulling restaurants from Foursquare
+* Ward49.xlsx - Locations within ward 49 as identified by import script
 
 ## Prerequisites
 
