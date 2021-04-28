@@ -18,6 +18,7 @@
 * Ward49_import.ipynb - Import data using the City of Chicago API
 * Ward49_map.ipynb - Create a map of points of interest in Chicago
 * Ward49_plotly.ipynb - Testing maps made with Plotly
+* Ward49_foursquare.ipynb - Testing pulling restaurants from Foursquare
 
 ## Prerequisites
 
