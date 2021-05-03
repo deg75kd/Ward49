@@ -34,7 +34,10 @@ geos 3.9.1\
 sodapy 2.1.0\
 shapely 1.7.1\
 geopy 2.1.0\
-folium 0.12.1
+folium 0.12.1\
+waitress 2.0.0\
+flask 1.1.2\
+json5 0.9.5
 
 ## Running the Code
 
