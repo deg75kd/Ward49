@@ -228,6 +228,12 @@ ward49_df.drop(ward49_df[ward49_df['loc_type_sec'] == 'Fitness Course'].index, i
 # Rename "playground park" to "playground"
 ward49_df.loc[ward49_df['loc_type_sec'] == 'Playground Park', 'loc_type_sec'] = "Playground"
 
+# Remove "Beach" from name
+ward49_df['name'] = ward49_df['name'].apply(lambda x: x.replace('Beach',''))
+
+# remove NaN
+ward49_df.fillna(value='', inplace=True)
+
 # Save data as file
 ward49_df.to_excel(excel_writer='Ward49.xlsx',
                     sheet_name='Sheet1',
