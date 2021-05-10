@@ -12,6 +12,11 @@
 
 ## Summary
 
+As a resident of Chicago', I have sometimes wondered what city facilities are near me. Chicago is famously a city of neighborhoods, and my neighborhood maps very closely to the 49th Ward. In this project I set out to map the facilities with the ward. First, I browsed Chicago's public data store for data sets containing the locations of places that might be of interest to many residents - schools, libraries, park facilities, etc. Initially I used Jupyter Notebooks to pull the data using the API to confirm there are locations within the ward. Then I cleaned and consolidated the data sets.
+
+After having a working data set, I used a few other Jupyter Notebooks to try out creating maps. First, I used Folium. Then I tried Plotly but didn't like it as much. I also looked at incorporating data from Foursquare's API. I decided to limit the scope of the project and abandoned those efforts.
+
+The final step was to prepare the map for deployment as a web page. At first I tried to mimic previous projects where I displayed Plotly graphs using Bootstrap. That was no working out, but I found a way to display the map in a more direct manner.
 
 ## File Descriptions
 
@@ -44,8 +49,18 @@ json5 0.9.5
 Import and format the data and save to an Excel file
 
 '''
+cd scripts
 python Ward49_import.py
 '''
+
+Running the web page from a Windows computer
+
+'''
+python myapp.py win
+'''
+
+The page is accessible at http://127.0.0.1:8080/
+
 
 ## Results
 
