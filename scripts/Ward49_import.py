@@ -17,7 +17,8 @@ import json
 
 # Define boundaries of Ward 49
 # https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Wards-2015-/sp34-6z76
-f = open('Boundaries - Wards (2015-).geojson')
+# f = open('Boundaries - Wards (2015-).geojson')
+f = open('/Users/Kevin/DS/Ward49/data/Boundaries - Wards (2015-).geojson')
 data = json.load(f)
 
 for feature in data['features']:
@@ -235,7 +236,7 @@ ward49_df['name'] = ward49_df['name'].apply(lambda x: x.replace('Beach',''))
 ward49_df.fillna(value='', inplace=True)
 
 # Save data as file
-ward49_df.to_excel(excel_writer='Ward49.xlsx',
+ward49_df.to_excel(excel_writer='/Users/Kevin/DS/Ward49/data/Ward49.xlsx',
                     sheet_name='Sheet1',
                     columns=df_column_list, 
                     header=True, 

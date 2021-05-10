@@ -22,6 +22,9 @@ def index():
     # Load data
     ward49_df = pd.read_excel('./data/Ward49.xlsx')
 
+    # replace NaN values
+    ward49_df.fillna('', inplace=True)
+
     # get list of location types
     location_type_list = ward49_df['loc_type_sec'].drop_duplicates().sort_values().to_list()
 
@@ -36,7 +39,7 @@ def index():
     chicago_map = folium.Map(location=[latitude, longitude],
                              width='100%',
                              height='100%',
-                             zoom_start=13)
+                             zoom_start=14)
 
     fgroup = []
     for i in range(len(location_type_list)):
@@ -58,11 +61,11 @@ def index():
                 cir_color = "grey"
                 
             tooltip_label = row.name + " " + row.loc_type_sec
-            popup_label = "{} {} {}".format(row.name, row.loc_type_sec, row.address)
-            # if row.address.notnull():
-                # popup_label = "{} {} {}".format(row.name, row.loc_type_sec, row.address)
-            # else:
-                # popup_label = "{} {}".format(row.name, row.loc_type_sec)
+            # popup_label = "{} {} {}".format(row.name, row.loc_type_sec, row.address)
+            if not row.address:
+                popup_label = "{} {}".format(row.name, row.loc_type_sec)
+            else:
+                popup_label = "{} {} {}".format(row.name, row.loc_type_sec, row.address)
                 
             label = folium.Popup(html=popup_label, parse_html=True)
             fgroup[i].add_child(folium.CircleMarker(
