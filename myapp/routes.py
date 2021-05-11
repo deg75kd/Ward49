@@ -1,4 +1,5 @@
 from myapp import app
+import os
 import numpy as np
 import pandas as pd
 import json
@@ -20,7 +21,9 @@ def index():
         index.html page
     """
     # Load data
-    ward49_df = pd.read_excel('./data/Ward49.xlsx')
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, '../data/Ward49.xlsx')
+    ward49_df = pd.read_excel(filename)
 
     # replace NaN values
     ward49_df.fillna('', inplace=True)
